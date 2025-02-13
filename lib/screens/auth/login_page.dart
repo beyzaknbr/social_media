@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -86,7 +88,8 @@ class _LoginPageState extends State<LoginPage> {
                       color: textFieldColor,
                       borderRadius: BorderRadius.circular(15),
                     ),
-                    child: const TextField(
+                    child:  TextField(
+                      controller: _emailController,
                       keyboardType: TextInputType.text,
                       decoration: InputDecoration(
                         border: InputBorder.none,
@@ -104,7 +107,8 @@ class _LoginPageState extends State<LoginPage> {
                       color: textFieldColor,
                       borderRadius: BorderRadius.circular(15),
                     ),
-                    child: const TextField(
+                    child:  TextField(
+                      controller: _passwordController,
                       obscureText: true,
                       decoration: InputDecoration(
                         border: InputBorder.none,
@@ -130,7 +134,9 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      loginUser();
+                    },
                     child: !isLoading? Text(
                       "Giriş Yap",
                       style: TextStyle(

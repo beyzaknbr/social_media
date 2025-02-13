@@ -4,8 +4,13 @@ class Assets {
 
   static const String fontsJersey15Regular = 'assets/fonts/Jersey15-Regular.ttf';
   static const String fontsSTIXTwoTextVariableFontWght = 'assets/fonts/STIXTwoText-VariableFont_wght.ttf';
+  static const String images61055025c32c81000497725bPhotoroom = 'assets/images/61055025c32c81000497725b-Photoroom.png';
   static const String imagesCicek = 'assets/images/cicek.png';
+  static const String imagesDm = 'assets/images/dm.png';
+  static const String imagesDmisaret = 'assets/images/dmisaret.png';
+  static const String imagesDmyuvarlak = 'assets/images/dmyuvarlak.png';
   static const String imagesLogo = 'assets/images/logo.png';
+  static const String imagesScreenshot1 = 'assets/images/Screenshot_1.png';
   static const String imagesStarLogo = 'assets/images/star_logo.png';
   static const String imagesWaveGreen = 'assets/images/wave_green.svg';
   static const String imagesWaveGreenDown = 'assets/images/wave_green_down.svg';
