@@ -3,6 +3,7 @@ import 'package:social_media/screens/pageview_screen/Profile_page.dart';
 import 'package:social_media/screens/pageview_screen/reels_page.dart';
 import 'package:social_media/screens/pageview_screen/search_page.dart';
 import 'package:social_media/utils/colors.dart';
+import 'package:social_media/widgets/post_share.dart';
 
 import '../screens/pageview_screen/feed.dart';
 
@@ -30,16 +31,23 @@ class _MobileLayoutState extends State<MobileLayout> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: PageView(
-        controller: _pageController,
-        onPageChanged: onChangedPage,
-        children: [
-          Feed(),
-          SearchPage(),
-          ReelsPage(),
-          ProfilePage(),
-        ],
+      body: SafeArea(
+        child: Stack(
+          children: [ PageView(
+            controller: _pageController,
+            onPageChanged: onChangedPage,
+            children: [
+              Feed(),
+              SearchPage(),
+              ReelsPage(),
+              ProfilePage(),
+            ],
+          ),
+                    ],
+        ),
       ),
+
+
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
             color: textFieldColor,
@@ -70,6 +78,14 @@ class _MobileLayoutState extends State<MobileLayout> {
             IconButton(
                 onPressed: () {
                   //gönderi paylaşma olacak
+                  showModalBottomSheet(
+                    context: context,
+                    backgroundColor: Colors.white,
+                    builder: (context){
+                    return  PostShare();
+
+                  },
+                  );
                 },
                 icon: Icon(
                   Icons.add_box_outlined,
