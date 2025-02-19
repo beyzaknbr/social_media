@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:social_media/layouts/mobile_layout.dart';
 import 'package:social_media/resources/auth_methods.dart';
 import 'package:social_media/screens/auth/sign_up_screen.dart';
 import 'package:social_media/utils/colors.dart';
@@ -33,6 +34,9 @@ class _LoginPageState extends State<LoginPage> {
         if (response) {
           Utils().showSnackBar("Giriş Yaptınız", context, waveColor);
           //burada ana sayfaya dönecek
+          Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => MobileLayout()));
         }
       }
       setState(() {
@@ -49,37 +53,34 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    // Ekran boyutlarını alıyoruz
+    // ekran boyutlarını alıyoruz
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      // Klavye açıldığında ekranın yeniden boyutlanmasını engelle
+      // klavye açıldığında ekranın yeniden boyutlanmasını engelledim
       body: SafeArea(
         child: Column(
           children: [
             // Üst SVG dalgası
             SvgPicture.asset(
               "assets/images/wavegreen.svg",
-              height: height * 0.17, // Üst SVG için daha az yer ayırıyoruz
+              height: height * 0.17, // üst SVG için daha az yer ayırıyoruz
               width: width,
               fit: BoxFit.cover,
             ),
-            // Ortadaki içerikler
+
             Expanded(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image.asset(
-                    "assets/images/star_logo.png",
-                    width: 120,
-                    height: 120,
+                    "assets/images/social_logo.png",
+                    width: 180,
+                    height: 150,
                   ),
-                  Text(
-                    "Our Social Media",
-                    style: TextStyle(fontFamily: "Header"),
-                  ),
+
                   Container(
                     width: double.infinity,
                     margin: const EdgeInsets.symmetric(horizontal: 30),

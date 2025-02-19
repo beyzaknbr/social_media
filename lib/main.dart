@@ -36,7 +36,10 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.purple),
         useMaterial3: true,
       ),
-      home: StreamBuilder(
+      home:LoginPage()
+
+      /* BURAYI BİR KERE GİRİŞ YAPTIĞIMDA OTOMATİK GİRİŞ YAPSIN DİYE EKLEYECEĞİM
+      StreamBuilder(
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.active) {
@@ -54,7 +57,7 @@ class MyApp extends StatelessWidget {
           }
           return LoginPage();
         },
-      ),
+      ),*/
     );
   }
 }

@@ -31,24 +31,22 @@ class _PostShareState extends State<PostShare> {
         ),
         ListTile(
           onTap: () {
-            // set picker theme based on app theme primary color
             final theme = InstaAssetPicker.themeData(Theme.of(context).primaryColor);
             InstaAssetPicker.pickAssets(
               context,
               pickerTheme: theme.copyWith(
-                  canvasColor: Colors.black, // body background color
-                  splashColor: Colors.grey, // ontap splash color
+                  canvasColor: Colors.black,
+                  splashColor: Colors.grey,
                   colorScheme: theme.colorScheme.copyWith(
-                    background: Colors.black87, // albums list background color
+                    background: Colors.black87,
                   ),
                   appBarTheme: theme.appBarTheme.copyWith(
-                    backgroundColor: Colors.black, // app bar background color
+                    backgroundColor: Colors.black,
                     titleTextStyle: Theme.of(context)
                         .appBarTheme
                         .titleTextStyle
-                        ?.copyWith(color: Colors.white), // change app bar title text style to be like app theme
+                        ?.copyWith(color: Colors.white),
                   ),
-                  // edit `confirm` button style
                   textButtonTheme: TextButtonThemeData(
                     style: TextButton.styleFrom(
                       foregroundColor: Colors.blue,

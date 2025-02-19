@@ -39,15 +39,11 @@ class _PhotoDescriptionScreenState extends State<PhotoDescriptionScreen> {
                       height: 300,
                       child: GestureDetector(
                         onTap: (){
+                          Navigator.of(context).push(MaterialPageRoute(builder: (context)=> PhotoClick(bytes: img) ));
                         },
-                        child: GestureDetector(
-                          onTap: (){
-                            Navigator.of(context).push(MaterialPageRoute(builder: (context)=> PhotoClick(bytes: img) ));
-                          },
-                          child: Image.memory(
-                            img,
-                            fit: BoxFit.contain,
-                          ),
+                        child: Image.memory(
+                          img,
+                          fit: BoxFit.contain,
                         ),
                       ));
                 }),
@@ -84,6 +80,22 @@ class _PhotoDescriptionScreenState extends State<PhotoDescriptionScreen> {
           ],
         ),
       ),
+      bottomSheet:Container(
+        width: double.infinity,
+        color: Colors.white,
+        padding: EdgeInsets.symmetric(horizontal: 20),
+        child: ElevatedButton(
+          style: ButtonStyle(
+
+backgroundColor:  MaterialStateProperty.all(textColor),
+          ),
+          onPressed: (){
+
+          },
+          child: Text("Gönderiyi Paylaş"),
+        )
+      ,
+      ) ,
     );
   }
 }

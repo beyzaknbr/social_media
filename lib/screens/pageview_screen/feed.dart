@@ -16,9 +16,9 @@ class _FeedState extends State<Feed> {
         centerTitle: true,
         backgroundColor: Colors.white,
         elevation: 0,
-        title: Image.asset('assets/images/61055025c32c81000497725b-Photoroom.png',
-        width: 175,
-        height: 150,),
+        title: Image.asset('assets/images/social_yazı.png',
+        width: 250,
+        height: 250,),
         actions: [
           Icon(Icons.favorite_border_outlined),
       Image.asset('assets/images/dm.png',
