@@ -5,13 +5,15 @@ import 'package:social_media/layouts/mobile_layout.dart';
 import 'package:social_media/screens/auth/login_page.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:social_media/utils/colors.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  await dotenv.load(fileName: ".env");
   runApp(const MyApp());
 
-  // You can request multiple permissions at once.
+  // İzinler
   Map<Permission, PermissionStatus> statuses = await [
     Permission.camera,
     Permission.storage,
@@ -25,7 +27,7 @@ void main() async {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
+  // Bu widget uygulamanızın köküdür.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -35,21 +37,21 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.purple),
         useMaterial3: true,
       ),
-      home: StreamBuilder( // giriş yaptıysak her seferinde her seferinde giriş ekranı istemesin
+      home: StreamBuilder(
         stream: FirebaseAuth.instance.authStateChanges(),
-        builder: (context,snapshot){
-          if(snapshot.connectionState == ConnectionState.active){
-            if(snapshot.hasData){
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.active) {
+            if (snapshot.hasData) {
               return MobileLayout();
             }
           }
-          if(snapshot.connectionState == ConnectionState.waiting){
+          if (snapshot.connectionState == ConnectionState.waiting) {
             return Center(
               child: CircularProgressIndicator(),
             );
           }
-          if(snapshot.hasError){
-            return Center(child: Icon(Icons.error,color: errorColor,),);
+          if (snapshot.hasError) {
+            return Center(child: Icon(Icons.error, color: errorColor));
           }
           return LoginPage();
         },

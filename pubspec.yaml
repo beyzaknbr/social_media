@@ -44,6 +44,8 @@ dependencies:
   path_provider: ^2.1.2
   flutter_svg: ^2.0.0
   insta_assets_picker: ^2.3.0
+  flutter_dotenv: ^5.2.1
+
 
 
 
@@ -109,6 +111,10 @@ flutter:
      - family: TextType
        fonts:
          - asset: assets/fonts/Roboto-VariableFont_wdth,wght.ttf
+
+     - family: Variabla
+       fonts:
+         - asset: assets/fonts/STIXTwoText-VariableFont_wght.ttf
 
 
   # For details regarding fonts from package dependencies,

@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:insta_assets_picker/insta_assets_picker.dart';
-import 'package:insta_assets_picker/insta_assets_picker.dart';
+import 'package:social_media/screens/post/photo_description_screen_dart.dart';
 import 'package:social_media/utils/colors.dart';
+import 'dart:typed_data';
+import 'package:social_media/utils/utils.dart';
+
+
 
 class PostShare extends StatefulWidget {
   const PostShare({super.key});
@@ -54,14 +58,21 @@ class _PostShareState extends State<PostShare> {
                 ),
 
               onCompleted: (_) {
-                print(_);
+                Navigator.of(context).push(MaterialPageRoute(
+                 builder: (context)=>PhotoDescriptionScreen(
+                     photoStream: _,
+                    ),
+                ),
+
+
+                );
+
               },
+              title: ("Yeni gönderi"), // confirm solunda
             );
-
-
-
           },
-          title: Text("Gönderi Paylaş"),
+          title: Text("Gönderi Paylaş",style: TextStyle(
+              fontFamily: "Variable"),),
           leading: Icon(
             Icons.photo_camera,
           ),
