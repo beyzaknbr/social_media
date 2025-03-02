@@ -2,17 +2,17 @@
 class Assets {
   Assets._();
 
-  static const String assetsImagesLogo = 'assets/images/logo_.png';
+  static const String assetsImagesError = 'assets/images/error_.png';
   static const String fontsJersey15Regular = 'assets/fonts/Jersey15-Regular.ttf';
   static const String fontsSTIXTwoTextVariableFontWght = 'assets/fonts/STIXTwoText-VariableFont_wght.ttf';
-  static const String images61055025c32c81000497725bPhotoroom = 'assets/images/61055025c32c81000497725b-Photoroom.png';
   static const String imagesCicek = 'assets/images/cicek.png';
   static const String imagesDm = 'assets/images/dm.png';
   static const String imagesDmisaret = 'assets/images/dmisaret.png';
   static const String imagesDmyuvarlak = 'assets/images/dmyuvarlak.png';
-  static const String imagesLogo = 'assets/images/logo.png';
+  static const String imagesError = 'assets/images/error.png';
+  static const String imagesFeed = 'assets/images/feed_.png';
+  static const String imagesLogo = 'assets/images/logo_.png';
   static const String imagesSocialLogo = 'assets/images/social_logo.png';
-  static const String imagesStarLogo = 'assets/images/star_logo.png';
   static const String imagesWaveGreen = 'assets/images/wave_green.svg';
   static const String imagesWaveGreenDown = 'assets/images/wave_green_down.svg';
   static const String imagesWavegreen = 'assets/images/wavegreen.svg';

@@ -5,7 +5,8 @@ import 'package:social_media/layouts/mobile_layout.dart';
 import 'package:social_media/screens/auth/login_page.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:social_media/utils/colors.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -30,13 +31,20 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.purple),
         useMaterial3: true,
       ),
-      home:LoginPage()
+        builder: (context, child) {
+          ScreenUtil.init(context,
+              designSize: Size(375, 812 ), );
+          return child!;
+        },
+        home:LoginPage()
+
 
       /* BURAYI BİR KERE GİRİŞ YAPTIĞIMDA OTOMATİK GİRİŞ YAPSIN DİYE EKLEYECEĞİM
       StreamBuilder(

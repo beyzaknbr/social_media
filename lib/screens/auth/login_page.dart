@@ -35,7 +35,7 @@ class _LoginPageState extends State<LoginPage> {
           Utils().showSnackBar("Giriş Yaptınız", context, waveColor);
           //burada ana sayfaya dönecek
           Navigator.pushReplacement(
-              context,
+              context,          //Main dart değişince değiştireceğim
               MaterialPageRoute(builder: (context) => MobileLayout()));
         }
       }
